@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, DollarSign, Home } from "lucide-react";
+import Link from "next/link";
 
 export default function RentalRequestCard({ request }: any) {
   return (
@@ -16,7 +17,12 @@ export default function RentalRequestCard({ request }: any) {
 
       <CardContent className="space-y-4 p-5">
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-semibold">{request.property.title}</h3>
+          <Link
+            href={`/dashboard/rent-requests/${request.id}`}
+            className="text-lg font-semibold hover:text-blue-400 transition-all duration-300"
+          >
+            {request.property.title}
+          </Link>
 
           <Badge>{request.status}</Badge>
         </div>

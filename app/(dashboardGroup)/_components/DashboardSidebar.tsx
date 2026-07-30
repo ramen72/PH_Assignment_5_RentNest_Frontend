@@ -20,7 +20,6 @@ import { ISidebarItem, NavbarProps } from "@/lib/types";
 export default function DashboardSidebar({ user }: NavbarProps) {
   const pathname = usePathname();
 
-
   let navItems: ISidebarItem[] = [];
 
   if (user?.data?.role === "TENANT") {
@@ -36,7 +35,7 @@ export default function DashboardSidebar({ user }: NavbarProps) {
   return (
     <Sidebar
       collapsible="none"
-      className=" h-[calc(100svh-0rem)] border-r border-sidebar-border"
+      className=" h-[calc(100svh-0rem)] border-r border-sidebar-border mr-3"
     >
       <SidebarHeader>
         <div className="flex items-center gap-2 px-2 py-1.5">

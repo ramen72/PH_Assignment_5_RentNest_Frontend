@@ -17,7 +17,7 @@ const DashboardGroupLayout = async ({
       <SidebarProvider>
         <div className="flex flex-1">
           <DashboardSidebar user={user} />
-          <main className="flex-1 min-w-0">{children}</main>
+          <main className="flex-1 min-w-0 pr-2">{children}</main>
         </div>
       </SidebarProvider>
     </>

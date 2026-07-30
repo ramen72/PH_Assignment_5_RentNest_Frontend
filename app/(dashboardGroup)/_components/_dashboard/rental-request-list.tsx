@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/table";
 
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 export default function RentalRequestList({ rentalRequests }: any) {
   console.log(rentalRequests);
@@ -29,7 +30,12 @@ export default function RentalRequestList({ rentalRequests }: any) {
           {rentalRequests?.data.map((item: any) => (
             <TableRow key={item.id}>
               <TableCell className="font-medium">
-                {item.property.title}
+                <Link
+                  href={`/dashboard/rent-requests/${item?.id}`}
+                  className="text-lg font-semibold hover:text-blue-400 transition-all duration-300"
+                >
+                  {item.property.title}
+                </Link>
               </TableCell>
 
               <TableCell>{item.tenant.name}</TableCell>
