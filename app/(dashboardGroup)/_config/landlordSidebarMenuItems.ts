@@ -8,7 +8,12 @@ export const LANDLORD_SIDEBAR_ITEMS: ISidebarItem[] = [
     icon: LayoutDashboard,
   },
   {
-    label: "My Posts",
+    label: "My Properties",
+    href: "/landlord-dashboard/properties",
+    icon: FileText,
+  },
+  {
+    label: "My Rent Request",
     href: "/landlord-dashboard/rent-requests",
     icon: FileText,
   },
