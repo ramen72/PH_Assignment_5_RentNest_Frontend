@@ -9,7 +9,7 @@ export const SUPER_ADMIN_SIDEBAR_ITEMS: ISidebarItem[] = [
   },
   {
     label: "My Posts",
-    href: "/super-admin-dashboard/my-posts",
+    href: "/super-admin-dashboard/rent-requests",
     icon: FileText,
   },
 ];

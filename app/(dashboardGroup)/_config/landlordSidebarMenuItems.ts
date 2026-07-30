@@ -9,7 +9,7 @@ export const LANDLORD_SIDEBAR_ITEMS: ISidebarItem[] = [
   },
   {
     label: "My Posts",
-    href: "/landlord-dashboard/my-posts",
+    href: "/landlord-dashboard/rent-requests",
     icon: FileText,
   },
 ];

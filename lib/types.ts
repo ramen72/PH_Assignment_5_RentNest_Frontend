@@ -27,7 +27,15 @@ export type IPostStatus = "DRAFT" | "PUBLISHED" | "ARCHIVED";
 //   EXPIRED
 //   CANCELED
 // }
-
+export type LoginState = {
+  success: boolean;
+  statusCode: number;
+  message: string;
+  data: {
+    accessToken: string;
+    refreshToken: string;
+  };
+};
 export type IAuthor = {
   id: string;
   name: string;
@@ -79,3 +87,4 @@ export type ISidebarItem = {
     Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>
   >;
 };
+
