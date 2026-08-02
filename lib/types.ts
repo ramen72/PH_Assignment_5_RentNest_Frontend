@@ -27,6 +27,29 @@ export type IPostStatus = "DRAFT" | "PUBLISHED" | "ARCHIVED";
 //   EXPIRED
 //   CANCELED
 // }
+export type RegisterState = {
+  success: boolean;
+  statusCode: number;
+  message: string;
+  error?: string;
+  data: {
+    data: {
+        user: {
+            id: string;
+            name: string;
+            email: string;
+            phone: string;
+            profilePhoto?: string;
+            role: string;
+            status: string;
+            stripeCustomerId?: null,
+            createdAt: string;
+            updatedAt: string;
+        }
+    }
+  };
+};
+
 export type LoginState = {
   success: boolean;
   statusCode: number;

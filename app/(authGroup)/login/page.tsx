@@ -1,3 +1,4 @@
+import Link from "next/link";
 import LoginForm from "../_components/LoginForm";
 
 export default function LoginPage() {
@@ -17,6 +18,9 @@ export default function LoginPage() {
 
           {/* Form */}
           <LoginForm />
+          <Link href="/register" className="text-blue-500 hover:underline">
+            Don't have an account? Register
+          </Link>
         </div>
       </div>
     </>
