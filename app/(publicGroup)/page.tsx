@@ -39,7 +39,7 @@ export default async function Page() {
             <Link href="/properties">
               <Button
                 size="lg"
-                className="bg-blue-600 hover:bg-blue-700 text-white gap-2"
+                className="bg-blue-600 hover:bg-blue-700 text-white gap-2 cursor-pointer"
               >
                 Browse Properties
                 <ArrowRight className="w-5 h-5" />
@@ -48,7 +48,7 @@ export default async function Page() {
             <Button
               size="lg"
               variant="outline"
-              className="border-white/20 text-white hover:bg-white/10"
+              className="border-white/20 hover:bg-white/55 cursor-pointer"
             >
               Learn More
             </Button>
@@ -58,7 +58,7 @@ export default async function Page() {
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
           <div className="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-6 text-center">
-            <div className="text-4xl font-bold text-blue-400">250+</div>
+            <div className="text-4xl font-bold text-blue-400">{propertiesData?.data.length}</div>
             <p className="text-gray-300 mt-2">Available Properties</p>
           </div>
           <div className="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-6 text-center">
