@@ -53,7 +53,7 @@ export default function PropertyGallery({
           {/* Hero Image */}
 
           <div
-            className="group relative col-span-2 cursor-pointer overflow-hidden"
+            className={`group relative col-span-2 cursor-pointer overflow-hidden`}
             onClick={() => openViewer(0)}
           >
             <Image
