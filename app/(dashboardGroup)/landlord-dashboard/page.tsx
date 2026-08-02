@@ -1,6 +1,7 @@
+import { getAllPublicProperties } from "@/app/(publicGroup)/_actions/propertiesActions";
 import React from "react";
 
-const LandlordDashboardPage = () => {
+const LandlordDashboardPage = async () => {
   return (
     <>
       <span>Landlord Dashboard Page</span>
