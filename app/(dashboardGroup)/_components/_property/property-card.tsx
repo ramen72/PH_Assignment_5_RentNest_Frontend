@@ -68,7 +68,7 @@ export function PropertyCard({
       <div className="flex gap-4 p-4 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
         {/* Image */}
         <div className="relative w-48 h-32 shrink-0 rounded-lg overflow-hidden">
-          <Image src={mainImage} alt={title} fill className="object-cover" />
+          <Image src={mainImage} unoptimized alt={title} fill className="object-cover" />
           {isAvailable && (
             <Badge className="absolute top-2 left-2 bg-green-500">
               Available
@@ -150,6 +150,7 @@ export function PropertyCard({
       <div className="relative w-full h-64 overflow-hidden bg-gray-100">
         <Image
           src={mainImage}
+          unoptimized
           alt={title}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-300"

@@ -17,7 +17,7 @@ export const getAllPublicProperties = async () => {
     // cache: "force-cache",
     next: {
       revalidate: 60 * 60 * 24, // 1 day
-      tags: ["get-Tenant-Rental-Requests"],
+      tags: ["get-all-public-properties"],
     },
   });
 
@@ -27,13 +27,14 @@ export const getAllPublicProperties = async () => {
 };
 
 export const getSinglePublicProperties = async (id: string) => {
+  
   const res = await fetch(
-    `${process.env.BACKEND_API_URL}/api/properties/:${id}`,
+    `${process.env.BACKEND_API_URL}/api/properties/${id}`,
     {
       method: "GET",
       next: {
         revalidate: 60 * 60 * 24, // 1 day
-        tags: ["get-Tenant-Rental-Requests"],
+        tags: ["get-single-public-properties"],
       },
     },
   );

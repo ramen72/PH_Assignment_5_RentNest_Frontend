@@ -12,8 +12,7 @@ interface PropertyViewProps {
 export default function PropertyView({ propertiesData }: PropertyViewProps) {
   const [viewType, setViewType] = useState<"card" | "list">("card");
   const [searchTerm, setSearchTerm] = useState("");
-  console.log(propertiesData);
-
+  
   const filteredProperties = propertiesData.filter(
     (property: any) =>
       property.title.toLowerCase().includes(searchTerm.toLowerCase()) ||

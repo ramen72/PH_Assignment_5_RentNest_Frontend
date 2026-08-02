@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Heart, MapPin, BedDouble, Bath, Zap } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link";
 
 interface PropertyImage {
   id: string;
@@ -62,13 +63,16 @@ export function PropertyCard({
 }: PropertyCardProps) {
   const [isFavorite, setIsFavorite] = useState(false);
   const mainImage = images?.[0]?.imageUrl || "/placeholder.jpg";
-  console.log(images[0]?.imageUrl);
+  
 
   if (viewType === "list") {
     return (
       <div className="flex gap-4 p-4 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
         {/* Image */}
-        <div className="relative w-48 h-32 shrink-0 rounded-lg overflow-hidden">
+        <Link
+          href={`/properties/${id}`}
+          className="relative w-48 h-32 shrink-0 rounded-lg overflow-hidden"
+        >
           <Image
             src={mainImage}
             unoptimized
@@ -81,13 +85,18 @@ export function PropertyCard({
               Available
             </Badge>
           )}
-        </div>
+        </Link>
 
         {/* Content */}
         <div className="flex-1 min-w-0">
-          <h3 className="text-lg font-semibold text-gray-900 truncate">
-            {title}
-          </h3>
+          <Link
+            href={`/properties/${id}`}
+            className="hover:underline transition-all duration-300"
+          >
+            <span className="text-lg font-semibold text-gray-900 truncate">
+              {title}
+            </span>
+          </Link>
           <div className="flex items-center text-gray-600 text-sm mt-1 gap-1">
             <MapPin className="w-4 h-4" />
             <span>{address}</span>
@@ -155,13 +164,15 @@ export function PropertyCard({
     <div className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300 group cursor-pointer">
       {/* Image Container */}
       <div className="relative w-full h-64 overflow-hidden bg-gray-100">
-        <Image
-          src={mainImage}
-          unoptimized
-          alt={title}
-          fill
-          className="object-cover group-hover:scale-105 transition-transform duration-300"
-        />
+        <Link href={`/properties/${id}`}>
+          <Image
+            src={mainImage}
+            unoptimized
+            alt={title}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-200"
+          />
+        </Link>
 
         {/* Badge */}
         <div className="absolute top-3 left-3 z-10">
@@ -198,9 +209,14 @@ export function PropertyCard({
       {/* Content */}
       <div className="p-4">
         {/* Title */}
-        <h3 className="font-bold text-lg text-gray-900 line-clamp-2 mb-2">
-          {title}
-        </h3>
+        <Link
+          href={`/properties/${id}`}
+          className="hover:underline transition-all duration-300"
+        >
+          <span className="font-bold text-lg text-gray-900 line-clamp-2 mb-2">
+            {title}
+          </span>
+        </Link>
 
         {/* Location */}
         <div className="flex items-start gap-2 text-sm text-gray-600 mb-3">
