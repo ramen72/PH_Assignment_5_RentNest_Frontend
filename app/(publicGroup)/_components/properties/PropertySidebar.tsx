@@ -44,7 +44,6 @@ const initialState = {
   message: "",
 };
 
-
 export default function PropertySidebar({ property }: PropertySidebarProps) {
   // const handleClick = async () => {
   //   const payload = {
@@ -54,26 +53,26 @@ export default function PropertySidebar({ property }: PropertySidebarProps) {
   //     message:
   //       "Hi, I really love the property and would love to move in by September. I have a stable job and excellent references!",
   //   };
-  
+
   //   const res = await createRentalRequest(payload);
-  
+
   //   console.log(res);
   // };
-  console.log(property)
+  console.log(property);
   const [state, formAction, isPending] = useActionState(
-  createRentalRequest,
-  initialState
-);
+    createRentalRequest,
+    initialState,
+  );
 
-useEffect(() => {
-  if (!state.message) return;
+  useEffect(() => {
+    if (!state.message) return;
 
-  if (state.success) {
-    toast.success(state.message);
-  } else {
-    toast.error(state.message);
-  }
-}, [state]);
+    if (state.success) {
+      toast.success(state.message);
+    } else {
+      toast.error(state.message);
+    }
+  }, [state]);
   return (
     <aside className="sticky top-24">
       <Card className="overflow-hidden border-0 shadow-xl">
@@ -149,43 +148,32 @@ useEffect(() => {
 
           {/* CTA */}
 
-          {/* <Button onClick={()=>handleClick()} size="lg" className="w-full cursor-pointer">
-            Request Rental
-          </Button> */}
           <form action={formAction}>
-  <input
-    type="hidden"
-    name="propertyId"
-    value={property.id}
-  />
+            <input type="hidden" name="propertyId" value={property.id} />
 
-  <input
-    type="hidden"
-    name="moveInDate"
-    value="2026-09-01T00:00:00.000Z"
-  />
+            <input
+              type="hidden"
+              name="moveInDate"
+              value="2026-09-01T00:00:00.000Z"
+            />
 
-  <input
-    type="hidden"
-    name="rentalDuration"
-    value="12"
-  />
+            <input type="hidden" name="rentalDuration" value="12" />
 
-  <input
-    type="hidden"
-    name="message"
-    value="Hi, I really love the property and would love to move in by September. I have a stable job and excellent references!"
-  />
+            <input
+              type="hidden"
+              name="message"
+              value="Hi, I really love the property and would love to move in by September. I have a stable job and excellent references!"
+            />
 
-  <Button
-    type="submit"
-    size="lg"
-    disabled={isPending}
-    className="w-full"
-  >
-    {isPending ? "Sending..." : "Request Rental"}
-  </Button>
-</form>
+            <Button
+              type="submit"
+              size="lg"
+              disabled={isPending}
+              className="w-full cursor-pointer"
+            >
+              {isPending ? "Sending..." : "Request Rental"}
+            </Button>
+          </form>
 
           <Button size="lg" variant="outline" className="w-full">
             Schedule Visit
