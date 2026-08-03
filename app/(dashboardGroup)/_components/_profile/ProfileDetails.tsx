@@ -43,7 +43,7 @@ export default function ProfileDetails({ user }: Props) {
 
       <CardHeader className="pt-6">
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-          <div className={`ml-8`}>
+          <div className={`ml-4`}>
             <h2 className="text-2xl font-bold">{user?.name}</h2>
 
             <div className="mt-1 flex items-center gap-2 text-muted-foreground">
