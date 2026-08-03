@@ -18,9 +18,12 @@ export default function LoginPage() {
 
           {/* Form */}
           <LoginForm />
-          <Link href="/register" className="text-blue-500 hover:underline">
-            Don't have an account? Register
-          </Link>
+          <p>
+            Don't have an account?{" "}
+            <Link href="/register" className="text-sm text-blue-500 hover:underline">
+              Register
+            </Link>
+          </p>
         </div>
       </div>
     </>

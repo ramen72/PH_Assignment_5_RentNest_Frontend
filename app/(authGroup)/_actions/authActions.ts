@@ -15,6 +15,16 @@ export const loginAction = async (
   const email = formData.get("email");
   const password = formData.get("password");
 
+  if (!email || !password) {
+      return {
+        success: false,
+        message: "Email and password are required.",
+        statusCode: 400,
+        data: null,
+      };
+    }
+
+
   const payload = {
     email,
     password,
@@ -35,12 +45,14 @@ export const loginAction = async (
 
     cookieStore.set("accessToken", result.data.accessToken, {
       httpOnly: true,
+      // secure: process.env.NODE_ENV === "production",
       maxAge: 60 * 60 * 24, // 1d
       sameSite: "lax",
     });
 
     cookieStore.set("refreshToken", result.data.refreshToken, {
       httpOnly: true,
+      // secure: process.env.NODE_ENV === "production",
       maxAge: 60 * 60 * 24 * 7, // 7d
       sameSite: "lax",
     });
@@ -56,12 +68,21 @@ export const loginAction = async (
       redirect(redirectTo);
     }
 
-    if (decodedToken?.role === "ADMIN") {
-      redirect("/admin-dashboard");
-    } else if (decodedToken?.role === "LANDLORD") {
-      redirect("/landlord-dashboard");
-    } else if (decodedToken?.role === "TENANT") {
-      redirect("/dashboard");
+    // if (decodedToken?.role === "ADMIN") {
+    //   redirect("/admin-dashboard");
+    // } else if (decodedToken?.role === "LANDLORD") {
+    //   redirect("/landlord-dashboard");
+    // } else if (decodedToken?.role === "TENANT") {
+    //   redirect("/dashboard");
+    // }
+
+    switch (decodedToken?.role) {
+      case "ADMIN":
+        redirect("/admin-dashboard");
+      case "LANDLORD":
+        redirect("/landlord-dashboard");
+      default:
+        redirect("/dashboard");
     }
   }
   return result;
@@ -134,6 +155,7 @@ export const registerAction = async (
     ) {
       redirect(redirectTo);
     }
+    redirect("/");
   }
   return result;
 };

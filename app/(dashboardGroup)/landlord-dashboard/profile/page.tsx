@@ -1,11 +1,13 @@
-import React from "react";
+import { getLandlordProfile } from "../../_actions/profileAction";
+import ProfileDetails from "../../_components/_profile/ProfileDetails";
 
-const UserProfilePage = () => {
+export default async function ProfilePage() {
+  const user = await getLandlordProfile();
+
   return (
-    <>
-      <span>Landlord Profile Page</span>
-    </>
+    <div className="mx-auto max-w-5xl p-6">
+      <h2 className="mb-4 text-lg font-semibold">Profile</h2>
+      <ProfileDetails user={user?.data} />
+    </div>
   );
-};
-
-export default UserProfilePage;
+}

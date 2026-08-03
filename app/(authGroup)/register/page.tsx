@@ -1,5 +1,6 @@
 import React from "react";
 import { RegisterForm } from "../_components/RegisterForm";
+import Link from "next/link";
 
 const RegisterPage = () => {
   return (
@@ -18,6 +19,12 @@ const RegisterPage = () => {
 
           {/* Form */}
           <RegisterForm />
+          <p>
+            Already have an account?{" "}
+        <Link href="/login" className="text-sm text-blue-500 hover:underline">
+           Login
+        </Link>
+          </p>
         </div>
       </div>
     </>

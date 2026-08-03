@@ -59,6 +59,40 @@ export type LoginState = {
     refreshToken: string;
   };
 };
+
+// Profile Types
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  profilePhoto: string;
+  role: "ADMIN" | "LANDLORD" | "TENANT";
+  status: "ACTIVE" | "INACTIVE";
+  stripeCustomerId: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+export interface IProfile {
+  name: string;
+  email?: string;
+  phone: string;
+  profilePhoto: string;
+  role: "ADMIN" | "LANDLORD" | "TENANT";
+  activeStatus?: "ACTIVE" | "INACTIVE";
+}
+
+
+export interface UserResponse {
+  success: boolean;
+  statusCode: number;
+  message: string;
+  data: {
+    user: User;
+  };
+}
+
+
 export type IAuthor = {
   id: string;
   name: string;
