@@ -53,7 +53,7 @@ export default function EditProfileDialog({ user }: Props) {
     updateLandlordProfile,
     initialState
   );
-console.log(state);
+
   useEffect(() => {
     if (!state) return;
     if (!state.success) {
@@ -64,7 +64,7 @@ console.log(state);
       setOpen(false);
       router.refresh();
     }
-    
+
     if (state.success) {
       toast.success(state.message || "Profile updated successfully!");
     }
