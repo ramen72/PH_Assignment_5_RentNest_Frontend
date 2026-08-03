@@ -5,7 +5,7 @@ import { getAllPublicProperties } from "./_actions/propertiesActions";
 
 export default async function Page() {
   const propertiesData = await getAllPublicProperties();
-  console.log(propertiesData);
+  
   return (
     <main className="min-h-screen bg-linear-to-br from-slate-900 to-slate-800">
       {/* Navigation */}

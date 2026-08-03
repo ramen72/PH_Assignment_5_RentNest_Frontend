@@ -41,10 +41,7 @@ export const RegisterForm = () => {
     action,
     initialState
   );
-  console.log(state)
-  console.log(formAction)
-  console.log(pending)
-
+ 
   useEffect(() => {
       if (!state || state?.statusCode === 0) return;
   

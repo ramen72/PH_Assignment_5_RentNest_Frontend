@@ -53,7 +53,7 @@ const amenityIcons: Record<string, React.ElementType> = {
 };
 
 export default function Amenities({ amenities }: AmenitiesProps) {
-  console.log(amenities);
+  
   return (
     <Card className="rounded-2xl border shadow-sm">
       <CardHeader>

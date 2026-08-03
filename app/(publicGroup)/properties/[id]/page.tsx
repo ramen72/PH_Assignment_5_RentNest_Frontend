@@ -17,8 +17,7 @@ export default async function PropertyDetailsPage({ params }: PageProps) {
   const { id } = await params;
 
   const property = await getSinglePublicProperties(id);
-  // console.log(property);
-
+  
   return (
     <div className="container mx-auto max-w-7xl py-10">
       <PropertyGallery images={property?.data?.images} title={property?.data?.title} />

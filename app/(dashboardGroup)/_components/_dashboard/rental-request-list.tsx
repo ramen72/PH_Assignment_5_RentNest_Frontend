@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 
 export default function RentalRequestList({ rentalRequests }: any) {
-  console.log(rentalRequests);
+  
   return (
     <div className="rounded-lg border">
       <Table>

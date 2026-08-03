@@ -45,20 +45,7 @@ const initialState = {
 };
 
 export default function PropertySidebar({ property }: PropertySidebarProps) {
-  // const handleClick = async () => {
-  //   const payload = {
-  //     propertyId: property?.id,
-  //     moveInDate: "2026-09-01T00:00:00.000Z",
-  //     rentalDuration: 12,
-  //     message:
-  //       "Hi, I really love the property and would love to move in by September. I have a stable job and excellent references!",
-  //   };
 
-  //   const res = await createRentalRequest(payload);
-
-  //   console.log(res);
-  // };
-  console.log(property);
   const [state, formAction, isPending] = useActionState(
     createRentalRequest,
     initialState,
