@@ -13,6 +13,7 @@ export default function PropertyView({ propertiesData }: PropertyViewProps) {
   const [viewType, setViewType] = useState<"card" | "list">("card");
   const [searchTerm, setSearchTerm] = useState("");
   
+  
   const filteredProperties = propertiesData.filter(
     (property: any) =>
       property.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -87,7 +88,7 @@ export default function PropertyView({ propertiesData }: PropertyViewProps) {
                 : "space-y-4"
             }
           >
-            {filteredProperties.map((property: any) => (
+            {filteredProperties && filteredProperties.map((property: any) => (
               <PropertyCard
                 key={property.id}
                 {...property}

@@ -62,8 +62,8 @@ export function PropertyCard({
   viewType = "card",
 }: PropertyCardProps) {
   const [isFavorite, setIsFavorite] = useState(false);
-  const mainImage = images?.[0]?.imageUrl || "/placeholder.jpg";
-  
+  const mainImage = images?.[0]?.imageUrl || "/placeholder.webp";
+  // console.log(images)
 
   if (viewType === "list") {
     return (
@@ -117,7 +117,7 @@ export function PropertyCard({
             <div className="text-sm text-gray-600">{area}</div>
           </div>
 
-          {amenities.length > 0 && (
+          {amenities?.length > 0 && (
             <div className="flex gap-2 mt-3 flex-wrap">
               {amenities.slice(0, 2).map((amenity) => (
                 <Badge
@@ -128,9 +128,9 @@ export function PropertyCard({
                   {amenity.amenity.name}
                 </Badge>
               ))}
-              {amenities.length > 2 && (
+              {amenities?.length > 2 && (
                 <Badge variant="outline" className="text-xs">
-                  +{amenities.length - 2}
+                  +{amenities?.length - 2}
                 </Badge>
               )}
             </div>
@@ -184,9 +184,9 @@ export function PropertyCard({
         </div>
 
         {/* Image Count */}
-        {images.length > 1 && (
+        {images?.length > 1 && (
           <div className="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded">
-            {images.length} photos
+            {images?.length} photos
           </div>
         )}
 
@@ -248,7 +248,7 @@ export function PropertyCard({
         </div>
 
         {/* Amenities */}
-        {amenities.length > 0 && (
+        {amenities?.length > 0 && (
           <div className="flex gap-2 mt-3 flex-wrap">
             {amenities.slice(0, 2).map((amenity) => (
               <Badge
@@ -259,9 +259,9 @@ export function PropertyCard({
                 {amenity.amenity.name}
               </Badge>
             ))}
-            {amenities.length > 2 && (
+            {amenities?.length > 2 && (
               <Badge variant="outline" className="text-xs">
-                +{amenities.length - 2} more
+                +{amenities?.length - 2} more
               </Badge>
             )}
           </div>

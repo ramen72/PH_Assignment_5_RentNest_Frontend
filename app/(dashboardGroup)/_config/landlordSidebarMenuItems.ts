@@ -13,7 +13,7 @@ export const LANDLORD_SIDEBAR_ITEMS: ISidebarItem[] = [
     icon: FileText,
   },
   {
-    label: "My Rent Request",
+    label: "Incoming Rent Requests",
     href: "/landlord-dashboard/rent-requests",
     icon: FileText,
   },
