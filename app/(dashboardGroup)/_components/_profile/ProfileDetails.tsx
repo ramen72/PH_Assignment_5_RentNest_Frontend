@@ -25,7 +25,7 @@ export default function ProfileDetails({ user }: Props) {
   return (
     <Card className="overflow-hidden border-0 shadow-xl">
       {/* Header */}
-      <div className="relative h-40 bg-linear-to-r from-indigo-600 via-blue-600 to-cyan-500">
+      <div className="relative -top-4 h-40 bg-linear-to-r from-indigo-600 via-blue-600 to-cyan-500">
         <div className="absolute -bottom-12 left-3">
           <div className="relative">
             <Avatar className="h-40 w-40 rounded-full border-4 border-background shadow-lg">
@@ -41,9 +41,9 @@ export default function ProfileDetails({ user }: Props) {
           </div>
       </div>
 
-      <CardHeader className="pt-16">
+      <CardHeader className="pt-6">
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-          <div>
+          <div className={`ml-8`}>
             <h2 className="text-2xl font-bold">{user?.name}</h2>
 
             <div className="mt-1 flex items-center gap-2 text-muted-foreground">

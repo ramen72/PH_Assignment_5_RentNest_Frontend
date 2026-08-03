@@ -155,7 +155,7 @@ export const registerAction = async (
     ) {
       redirect(redirectTo);
     }
-    redirect("/");
+    redirect("/login");
   }
   return result;
 };
