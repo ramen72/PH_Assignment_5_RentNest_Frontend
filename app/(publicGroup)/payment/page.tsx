@@ -1,6 +1,6 @@
 import { Suspense } from "react";
-import { PricingSection } from "../_components/payment/PricingSection";
 import { PricingSectionLoader } from "../_components/payment/PricingSectionLoader";
+import { PricingSection } from "../_components/payment/PricingSection";
 
 const PaymentPage = () => {
     return (

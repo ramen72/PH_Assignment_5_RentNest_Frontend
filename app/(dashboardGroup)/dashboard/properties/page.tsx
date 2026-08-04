@@ -3,7 +3,7 @@ import PropertyViewTenant from "../_components/PropertyViewTenant";
 
 const page = async () => {
   const propertiesData = await getAllPublicPropertiesTenant();
-
+console.log(propertiesData)
   return (
     <>
       <PropertyViewTenant propertiesData={propertiesData?.data} />

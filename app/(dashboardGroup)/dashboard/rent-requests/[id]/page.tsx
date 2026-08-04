@@ -1,3 +1,4 @@
+"use server";
 import { getSingleRentalRequest } from "@/app/(dashboardGroup)/_actions/getMyRentalRequests";
 import InfoCard from "@/components/shared/InfoCard";
 import LandlordInfo from "@/components/shared/InfoCard";
@@ -13,7 +14,9 @@ import {
   Mail,
   MapPin,
   Phone,
+  ShieldCheck,
 } from "lucide-react";
+import PaymentForm from "../../_components/PaymentForm";
 
 interface PageProps {
   params: Promise<{
@@ -23,9 +26,10 @@ interface PageProps {
 
 export default async function RentRequestDetailsPage({ params }: PageProps) {
   const { id } = await params;
-
+  
   const response = await getSingleRentalRequest(id);
-
+  console.log(response?.data?.tenant?.subscription?.status);
+  
   if (!response.success) {
     return <p>Rental Request Not Found</p>;
   }
@@ -39,8 +43,18 @@ export default async function RentRequestDetailsPage({ params }: PageProps) {
     <div className="space-y-6">
       {/* Actions */}
       {request?.status === "PENDING" && (
-        <div className="flex justify-end gap-3 mt-3 mr-3">
-          <Button variant="destructive">Cancel</Button>
+        <div className="flex justify-end items-center gap-3 mt-3 mr-3">
+          
+          <Button variant="destructive">CANCEL</Button>
+          {
+            response?.data?.tenant?.subscription?.status !== "ACTIVE" ?
+          <PaymentForm/> :
+          <div className="bg-green-700 py-1 px-2 rounded-2xl text-white flex justify-end items-center">
+            <ShieldCheck width={20} height={20}/>
+            <span className=" uppercase"> Subscripted</span>
+
+          </div> 
+          }
 
           {/* <Button>Approve</Button> */}
         </div>
@@ -65,6 +79,9 @@ export default async function RentRequestDetailsPage({ params }: PageProps) {
                   {request.property.address}
                 </p>
               </div>
+              {/* <Badge>{request.status}</Badge> */}
+              <Badge>{request?.status === "APPROVED" &&request?.tenant?.subscription?.status === "ACTIVE"? "Complete" : request.status}</Badge>
+              
 
               <div className="grid grid-cols-2 gap-5 md:grid-cols-5">
                 <div>

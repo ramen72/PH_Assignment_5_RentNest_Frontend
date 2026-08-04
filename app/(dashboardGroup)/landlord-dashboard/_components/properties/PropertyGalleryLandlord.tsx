@@ -15,13 +15,13 @@ interface PropertyGalleryProps {
   images: PropertyImage[];
 }
 
-export default function PropertyGalleryTenant({
+export default function PropertyGalleryLandlord({
   title,
   images,
 }: PropertyGalleryProps) {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(0);
-  console.log(images)
+  
 
   if (!images?.length) {
     return (
