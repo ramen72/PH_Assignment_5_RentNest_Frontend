@@ -1,11 +1,13 @@
-import PropertyGallery from "../../_components/properties/PropertyGallery";
-import PropertyHeader from "../../_components/properties/PropertyHeader";
-import PropertyInfo from "../../_components/properties/PropertyInfo";
-import PropertyAmenities from "../../_components/properties/PropertyAmenities";
-import PropertyDescription from "../../_components/properties/PropertyDescription";
-import PropertySidebar from "../../_components/properties/PropertySidebar";
-import LandlordCard from "../../_components/properties/LandlordCard";
-import { getSinglePublicProperties } from "../../_actions/propertiesActions";
+
+import { getSinglePublicProperties } from "@/app/(publicGroup)/_actions/propertiesActions";
+import PropertyHeaderAmin from "../../_components/PropertyHeaderAmin";
+import PropertyGalleryAmin from "../../_components/PropertyGalleryAmin";
+import PropertyInfoAmin from "../../_components/PropertyInfoAmin";
+import PropertyDescriptionAmin from "../../_components/PropertyDescriptionAmin";
+import PropertyAmenitiesAmin from "../../_components/PropertyAmenitiesAmin";
+import LandlordCardAmin from "../../_components/LandlordCardAmin";
+import PropertySidebarAmin from "../../_components/PropertySidebarAmin";
+
 
 interface PageProps {
   params: Promise<{
@@ -20,24 +22,24 @@ export default async function PropertyDetailsPage({ params }: PageProps) {
   
   return (
     <div className="container mx-auto max-w-7xl py-10">
-      <PropertyGallery images={property?.data?.images} title={property?.data?.title} />
+      <PropertyGalleryAmin images={property?.data?.images} title={property?.data?.title} />
 
       <div className="mt-8">
-        <PropertyHeader property={property} />
+        <PropertyHeaderAmin property={property} />
       </div>
 
       <div className="mt-8 grid gap-8 lg:grid-cols-3">
         <div className="space-y-8 lg:col-span-2">
-          <PropertyInfo property={property} />
+          <PropertyInfoAmin property={property} />
 
-          <PropertyDescription description={property?.data?.description} />
+          <PropertyDescriptionAmin description={property?.data?.description} />
 
-          <PropertyAmenities amenities={property?.data?.amenities} />
+          <PropertyAmenitiesAmin amenities={property?.data?.amenities} />
 
-          <LandlordCard landlord={property?.data?.landlord} />
+          <LandlordCardAmin landlord={property?.data?.landlord} />
         </div>
 
-        <PropertySidebar property={property?.data} />
+        <PropertySidebarAmin property={property?.data} />
       </div>
     </div>
   );

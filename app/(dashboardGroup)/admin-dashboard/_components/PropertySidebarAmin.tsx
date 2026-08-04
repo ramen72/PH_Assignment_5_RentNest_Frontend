@@ -44,7 +44,7 @@ const initialState = {
   message: "",
 };
 
-export default function PropertySidebar({ property }: PropertySidebarProps) {
+export default function PropertySidebarAmin({ property }: PropertySidebarProps) {
 
   const [state, formAction, isPending] = useActionState(
     createRentalRequest,
@@ -152,19 +152,8 @@ export default function PropertySidebar({ property }: PropertySidebarProps) {
               value="Hi, I really love the property and would love to move in by September. I have a stable job and excellent references!"
             />
 
-            <Button
-              type="submit"
-              size="lg"
-              disabled={isPending}
-              className="w-full cursor-pointer"
-            >
-              {isPending ? "Sending..." : "Request Rental"}
-            </Button>
           </form>
 
-          <Button size="lg" variant="outline" className="w-full">
-            Schedule Visit
-          </Button>
 
           {/* Contact */}
 

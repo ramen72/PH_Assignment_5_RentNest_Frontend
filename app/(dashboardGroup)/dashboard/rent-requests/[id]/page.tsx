@@ -42,7 +42,7 @@ export default async function RentRequestDetailsPage({ params }: PageProps) {
         <div className="flex justify-end gap-3 mt-3 mr-3">
           <Button variant="destructive">Cancel</Button>
 
-          <Button>Approve</Button>
+          {/* <Button>Approve</Button> */}
         </div>
       )}
       {/* Property */}

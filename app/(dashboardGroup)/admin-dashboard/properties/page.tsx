@@ -1,7 +1,6 @@
 
-
-import PropertyView from "@/app/(publicGroup)/_components/properties/PropertyView";
 import { getAllPropertyForAdmin } from "../../_actions/propertyActions";
+import PropertyAdminView from "../_components/PropertyAdminView";
 
 const page = async () => {
   const propertiesData = await getAllPropertyForAdmin();
@@ -9,8 +8,7 @@ const page = async () => {
 
   return (
     <>
-    <h1>All Properties</h1>
-      <PropertyView propertiesData={propertiesData?.data} />
+      <PropertyAdminView propertiesData={propertiesData?.data} />
     </>
   );
 };

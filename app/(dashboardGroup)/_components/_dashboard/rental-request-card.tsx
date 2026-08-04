@@ -5,6 +5,7 @@ import { Calendar, DollarSign, Home } from "lucide-react";
 import Link from "next/link";
 
 export default function RentalRequestCard({ request }: any) {
+  
   return (
     <Card className="overflow-hidden">
       {/* <Image
@@ -24,7 +25,7 @@ export default function RentalRequestCard({ request }: any) {
             {request.property.title}
           </Link>
 
-          <Badge>{request.status}</Badge>
+          <Badge>{request?.status === "APPROVED" &&request?.tenant?.subscription?.status === "ACTIVE"? "Complete" : request.status}</Badge>
         </div>
 
         <p className="text-sm text-muted-foreground">

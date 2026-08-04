@@ -3,6 +3,7 @@ import RentalRequestView from "../../_components/_dashboard/rental-request-view"
 
 const TenantMyRequestPage = async () => {
   const rentalRequests = await getMyRentalRequests();
+  // console.log(rentalRequests)
 
   if (!rentalRequests.success || !rentalRequests.data.length) {
     return (

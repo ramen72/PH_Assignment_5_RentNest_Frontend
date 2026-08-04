@@ -49,7 +49,8 @@ export default function RentalRequestList({ rentalRequests }: any) {
               <TableCell>${item.monthlyRent.toLocaleString()}</TableCell>
 
               <TableCell>
-                <Badge>{item.status}</Badge>
+                {/* <Badge>{item.status}</Badge> */}
+                <Badge>{ item?.status === "APPROVED" && item?.tenant?.subscription?.status === "ACTIVE"? "Complete" :  item.status}</Badge>
               </TableCell>
             </TableRow>
           ))}
