@@ -63,7 +63,6 @@ export function PropertyCardAmin({
 }: PropertyCardProps) {
   const [isFavorite, setIsFavorite] = useState(false);
   const mainImage = images?.[0]?.imageUrl || "/placeholder.webp";
-  // console.log(images)
 
   if (viewType === "list") {
     return (

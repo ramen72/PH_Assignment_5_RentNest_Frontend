@@ -63,8 +63,7 @@ export function PropertyCardTenant({
 }: PropertyCardProps) {
   const [isFavorite, setIsFavorite] = useState(false);
   const mainImage = images?.[0]?.imageUrl || "/placeholder.webp";
-  // console.log(images)
-
+  
   if (viewType === "list") {
     return (
       <div className="flex gap-4 p-4 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">

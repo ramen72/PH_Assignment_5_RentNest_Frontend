@@ -4,7 +4,7 @@ import RentalRequestAdminView from './_components/rental-request-admin-view';
 
 const page = async () => {
     const rentalRequests = await getAllRentalRequests();
-    console.log(rentalRequests)
+    
       if (!rentalRequests.success || !rentalRequests.data.length) {
         return (
           <p className="py-12 text-center text-muted-foreground">

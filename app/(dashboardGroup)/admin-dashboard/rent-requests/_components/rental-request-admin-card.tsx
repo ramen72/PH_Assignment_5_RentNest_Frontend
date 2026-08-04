@@ -5,7 +5,7 @@ import { Calendar, DollarSign, Home } from "lucide-react";
 import Link from "next/link";
 
 export default function RentalRequestCard({ request }: any) {
-  console.log(request)
+  
   return (
     <Card className="overflow-hidden">
       {/* <Image

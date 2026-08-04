@@ -28,8 +28,7 @@ export default function PaymentForm() {
     createCheckoutAction,
     initialState
   );
-  console.log(state)
-  console.log(state?.data?.paymentUrl)
+ 
 
   useEffect(() => {
   if (state?.data?.paymentUrl) {

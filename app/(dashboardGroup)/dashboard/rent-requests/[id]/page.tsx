@@ -28,7 +28,7 @@ export default async function RentRequestDetailsPage({ params }: PageProps) {
   const { id } = await params;
   
   const response = await getSingleRentalRequest(id);
-  console.log(response?.data?.tenant?.subscription?.status);
+  
   
   if (!response.success) {
     return <p>Rental Request Not Found</p>;

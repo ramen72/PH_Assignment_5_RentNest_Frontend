@@ -21,8 +21,7 @@ export default function PropertyGalleryTenant({
 }: PropertyGalleryProps) {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(0);
-  console.log(images)
-
+  
   if (!images?.length) {
     return (
       <div className="flex h-112.5 items-center justify-center rounded-2xl bg-muted">

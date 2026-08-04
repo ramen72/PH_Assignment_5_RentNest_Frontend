@@ -4,7 +4,6 @@ import PropertyAdminView from "../_components/PropertyAdminView";
 
 const page = async () => {
   const propertiesData = await getAllPropertyForAdmin();
-  console.log(propertiesData)
 
   return (
     <>
